@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 
 using namespace std;
@@ -6,6 +5,7 @@ using namespace std;
 class Array_stack
 {
 private:
+    int elements = 0;
     int size = 100;
     int Dsize = 200;
     int cur_size = size;
