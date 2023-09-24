@@ -4,8 +4,11 @@ Array_stack::Array_stack()
 {
     int elements = 0;
     int cur_size = size;
-    int array[100];
-    this->arr = array;
+    int *array = new int[cur_size];
+    for (int i = 0; i < cur_size; i++)
+    {
+        arr[i] = 0;
+    }
 }
 
 bool Array_stack::is_empty()
@@ -37,7 +40,7 @@ void Array_stack::push(int x)
     }
     if (is_full() == true)
     {
-        DoubleA(arr, x);
+        DoubleA(x);
     }
     else
     {
@@ -70,17 +73,26 @@ int Array_stack::pull()
     return x;
 }
 
-void Array_stack::DoubleA(int arr[], int x)
+void Array_stack::DoubleA(int x)
 {
-    int Darray[Dsize];
-    cur_size = Dsize;
+    int Darray[2 * cur_size] = {0};
+    cur_size = 2 * cur_size;
     int k = 0;
     for (int i = size - 1; i >= 0; i--)
     {
-        k = this->arr[i];
+        k = arr[i];
         Darray[i + 1] = k;
     }
     Darray[0] = x;
     elements += 1;
-    this->arr = Darray;
+
+    delete[] arr;
+
+    arr[cur_size];
+    for (int i = 0; i < cur_size; i++)
+    {
+        arr[i] = Darray[i];
+    }
+
+    delete[] Darray;
 }
