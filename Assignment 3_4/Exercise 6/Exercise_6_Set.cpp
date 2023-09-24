@@ -7,14 +7,14 @@ private:
     Stack<Object> stack;
 
 public:
-    /*      Insert adds ellement to stack.      */
+/*      Insert adds ellement to stack.      */
     void insert(const Object& element) {
         // Checks if the element is not already in the set.
         if (!contains(element)) {
             stack.push(element);
         }
     }
-    /*       Remove deletes                     */
+/*       Remove and deletes elements       */
     void remove(const Object& element) {
         // Creating a temporary stack to hold elements we want to keep
         Stack<Object> tempStack;
@@ -36,7 +36,7 @@ public:
         }
     }
 
-    /*      Contains is our search           */
+/*      Contains is our search           */
     bool contains(const Object& element) {
         Stack<Object> tempStack;
         bool found = false;
