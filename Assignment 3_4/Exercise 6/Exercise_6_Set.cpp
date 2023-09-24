@@ -1,3 +1,4 @@
+#include <isostream>
 #include "stack_class.h"
 
 template <typename Object>
