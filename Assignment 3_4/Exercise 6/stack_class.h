@@ -15,7 +15,12 @@ class Stack {
 
 	~Stack() { delete list; }
 
+	 // Add a size member function
+	int size() const { return list->size(); } 
+
+    	// Mark empty as const
 	bool empty() { return (list->size() == 0); }
+
 	Object top() { return list->find_kth(0); }
 	Object pop() { return list->pop_front(); }
 
