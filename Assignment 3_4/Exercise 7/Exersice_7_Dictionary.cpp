@@ -13,22 +13,24 @@ private:
     vector<DictionaryEntry> entries;
 
 public:
-    // Add a new entry to the dictionary
+/*      Adds the new meaning of the work and push it into the vector     */
     void AddMeaning(const string& key, const string& value) {
         entries.push_back(make_pair(key, value));
     }
 
-    // Lookup a word and return its meaning
+/*      Lookup a word and return its meaning        */
     string GetMeaning(const string& key) {
         for (const auto& entry : entries) {
+            // When entry found prints meaning
             if (entry.first == key) {
                 return entry.second;
             }
         }
+        // If entry is not found will print:
         return "Word not found in the dictionary.";
     }
 
-    // Print all entries in the dictionary
+/*      Print all entries in the dictionary     */
     void PrintDictionary() {
         for (const auto& entry : entries) {
             cout << entry.first << ": " << entry.second << endl;
@@ -46,6 +48,7 @@ int main() {
       
     cout << "\n";
     // Look up and print the meaning of a word
+    
     cout << "Meaning of 'STL': " << TestDictionary.GetMeaning("STL") << endl;
     cout << "\n";
     cout << "Meaning of 'ATP': " << TestDictionary.GetMeaning("ATP") << endl;
